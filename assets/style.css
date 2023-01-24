@@ -22,6 +22,6 @@ li {
 }
 
 #time-left {
-    float: right;
+    flex-direction: right;
     margin: auto;
 }

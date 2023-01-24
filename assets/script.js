@@ -21,10 +21,11 @@ var answer5 = ['Louisiana', 'Alabama', 'Kentucky', 'Georgia'];
 
 var question0Funct = function() {
     questionsElement(question0).text($(question0));
+    console.log(question0);
     answersElement[0].append.text($(answers1[0]));
     answersElement[1].append.text($(answers1[1]));
-    answersElement[3].append.text($(answers1[2]));
-    answersElement[4].append.text($(answers1[3]));
+    answersElement[2].append.text($(answers1[2]));
+    answersElement[3].append.text($(answers1[3]));
     if (
         (questionsElement[0] === true) ||
         (answersElement[1].input.value === true)) {
@@ -38,8 +39,8 @@ var question1Funct = function() {
     questionsElement(question1).text(question1);
     answersElement[0].append.text($(answers1[0]));
     answersElement[1].append.text($(answers1[1]));
-    answersElement[3].append.text($(answers1[2]));
-    answersElement[4].append.text($(answers1[3]));
+    answersElement[2].append.text($(answers1[2]));
+    answersElement[3].append.text($(answers1[3]));
     if (
         (questionsElement[1] === true) ||
         (answersElement[0].input.value === true)) {
@@ -53,8 +54,8 @@ var question2Funct = function() {
     questionsElement(question2).text(question2);
     answersElement[0].append.text($(answers1[0]));
     answersElement[1].append.text($(answers1[1]));
-    answersElement[3].append.text($(answers1[2]));
-    answersElement[4].append.text($(answers1[3]));
+    answersElement[2].append.text($(answers1[2]));
+    answersElement[3].append.text($(answers1[3]));
     if (
         (questionsElement[2] === true) ||
         (answersElement[1].input.value === true)) {
