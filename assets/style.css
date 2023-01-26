@@ -1,22 +1,43 @@
 header {
     display: flex;
+    justify-content: flex-start;
+    align-items: left;
     height: 20px;
+}
+
+body {
+    overflow:hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+main {
+    height: 100%;
 }
 
 li {
     background-color: rgb(65, 0, 65);
-    color: white;
+    color: whitesmoke;
+    margin: 8px;
     border: 8px;
     border-radius: 2px;
+    padding: 4px;
+    list-style-type: none;
 }
 
 .quiz-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 300px;
+    border: 3px;
 }
 
+#questionsElement {
+    font-size: 10px;
+}
 #high-scores {
     justify-content: flex-start;
 }
@@ -24,4 +45,9 @@ li {
 #time-left {
     flex-direction: right;
     margin: auto;
+}
+
+#correct-wrong {
+    width: 400px;
+    height: 1500px;
 }
