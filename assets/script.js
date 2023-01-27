@@ -9,6 +9,8 @@ var answerThree = $('#C');
 var answerFour = $('#D');
 var resultsEl = $('#correct-wrong');
 
+
+
 var quizData = [
     {
         question:"In California, you can't legally buy a mousetrap without having what? (a hunting license)",
@@ -27,11 +29,11 @@ var quizData = [
         correct: "A"
     },
     {
-        question:"According to those close to him, what was Walt Disney truly afraid of? (mice)",
-        A:'Spiders',
-        B:'Artistic Theft',
-        C: 'Lightning',
-        D: 'Mice',
+        question:"In this state, chickens outnumber people 260 to one",
+        A:'Texas',
+        B:'Wisconson',
+        C: 'Florida',
+        D: 'Delaware',
         correct: "D"
     },
     {
@@ -51,11 +53,16 @@ var quizData = [
         correct: "D"
     }
 ];
+
 console.log(quizData)
 
 
 var points = 0;
 var currentQuiz = 0;
+
+function test() {
+    answersElement.addEventListener("click");
+}
 
 loadQuiz();
 function loadQuiz() {
@@ -68,14 +75,61 @@ function loadQuiz() {
     answerThree.text(quizData[0].C);
     answerFour.text(quizData[0].D);
     // console.log(quizData[0].A)
-    if (answerTwo.click == true){
+
+    if ((answerOne || answerThree || answerFour).on('click',() => {
+        resultsEl.text("Sorry! That's incorrect");
+        secondQuestion();
+        console.log(resultsEl)
+    }));
+    else {answerTwo.on('click',() => {
+            resultsEl = resultsEl.text("Congratulations! That's correct");
+            points ++;
+            secondQuestion();
+    })};
+}
+   /*if (answerTwo.click() == true) {
         resultsEl = resultsEl.text("Congratulations! That's correct");
         points ++;
         secondQuestion();
-    } else if (answerOne.click == true|| answerThree.click == true|| answerFour.click == true) {
+    } else if (answerOne.click() == true|| answerThree.click() == true|| answerFour.click() == true) {
         resultsEl.text("Sorry! That's incorrect");
         secondQuestion();
     }
+}
+
+/*
+    if (answerOne.addEventListener('click', function() {
+        alert("Sorry! That's incorrect");
+        secondQuestion();
+    })); else if (
+        answerThree.addEventListener('click', function() {
+            alert("Sorry! That's incorrect");
+            secondQuestion();
+    })); else if (
+        answerFour.addEventListener('click', function() {
+            alert("Sorry! That's incorrect");
+            secondQuestion();
+    })); else {
+        answerTwo.addEventListener('click', function(){
+        resultsEl = resultsEl.text("Congratulations! That's correct");
+        points ++;;
+        secondQuestion();
+       })};
+
+       */
+
+    /*
+    if ((answerOne || answerThree || answerFour).click(function() {
+        resultsEl.text("Sorry! That's incorrect");
+        secondQuestion();
+        console.log(resultsEl)
+    }));
+    else {answerTwo.click(function() {
+            resultsEl = resultsEl.text("Congratulations! That's correct");
+            points ++;
+            secondQuestion();
+    });
+    */
 
 function secondQuestion() {
     var currentQuizData = quizData[currentQuiz];
@@ -86,7 +140,6 @@ function secondQuestion() {
     answerTwo.text(quizData[1].B);
     answerThree.text(quizData[1].C);
     answerFour.text(quizData[1].D);
-    // console.log(quizData[0].A)
     if (answerTwo.click == true){
         resultsEl = resultsEl.text("Congratulations! That's correct");
         points ++;
@@ -99,6 +152,6 @@ function secondQuestion() {
     /*for (var i = 1; i > quizData; i++) {
 
     } */
-}
+
 /* Creat Li to place answers in (quizData). Put inside of a loop. */
 
